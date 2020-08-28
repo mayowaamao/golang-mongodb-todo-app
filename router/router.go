@@ -1,8 +1,8 @@
 package router
 
 import (
-	"../middleware"
 	"github.com/gorilla/mux"
+	"github.com/simplifyd-examples/golang-mongodb-todo-app/middleware"
 )
 
 // Router is exported and used in main.go

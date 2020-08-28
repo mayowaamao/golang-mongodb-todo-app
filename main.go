@@ -3,9 +3,10 @@ package main
 import (
 	"fmt"
 	"log"
-  "os"
 	"net/http"
-	"./router"
+	"os"
+
+	"github.com/simplifyd-examples/golang-mongodb-todo-app/router"
 )
 
 func main() {

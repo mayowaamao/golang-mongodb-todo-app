@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"os"
 
-	"../models"
 	"github.com/gorilla/mux"
+	"github.com/simplifyd-examples/golang-mongodb-todo-app/models"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
