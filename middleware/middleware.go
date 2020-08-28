@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 
 	"../models"
 	"github.com/gorilla/mux"
@@ -16,12 +17,8 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-// DB connection string
-// const connectionString = "mongodb://localhost:27017"
-const connectionString = "Connection String"
-
 // Database Name
-const dbName = "test"
+const dbName = "todo"
 
 // Collection name
 const collName = "todolist"
@@ -33,7 +30,9 @@ var collection *mongo.Collection
 func init() {
 
 	// Set client options
-	clientOptions := options.Client().ApplyURI(connectionString)
+	// DB connection string
+	// mongodb://<URL>:<PORT>
+	clientOptions := options.Client().ApplyURI(fmt.Sprintf("%s:%s", os.Getenv("MONGODB_MONGODB8_URL"), os.Getenv("MONGODB_MONGODB8_PORT")))
 
 	// connect to MongoDB
 	client, err := mongo.Connect(context.TODO(), clientOptions)
