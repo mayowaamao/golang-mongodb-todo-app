@@ -8,6 +8,7 @@ import (
 // Router is exported and used in main.go
 func Router() *mux.Router {
 	router := mux.NewRouter()
+	router.HandleFunc("/", middleware.Home).Methods("GET", "OPTIONS")
 	router.HandleFunc("/tasks", middleware.GetAllTask).Methods("GET", "OPTIONS")
 	router.HandleFunc("/tasks", middleware.CreateTask).Methods("POST", "OPTIONS")
 	router.HandleFunc("/tasks/{id}/undo", middleware.UndoTask).Methods("PUT", "OPTIONS")

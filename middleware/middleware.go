@@ -55,6 +55,15 @@ func init() {
 	fmt.Println("Collection instance created!")
 }
 
+// Home route
+func Home(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Context-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	json.NewEncoder(w).Encode(map[string]string{
+		"status": "Server is live!",
+	})
+}
+
 // GetAllTask get all the task route
 func GetAllTask(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Context-Type", "application/x-www-form-urlencoded")
