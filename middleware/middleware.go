@@ -18,7 +18,7 @@ import (
 )
 
 // Database Name
-const dbName = "todo"
+const dbName = "sample-todo-db"
 
 // Collection name
 const collName = "todolist"
