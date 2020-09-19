@@ -32,7 +32,7 @@ func init() {
 	// Set client options
 	// DB connection string
 	// mongodb://<URL>:<PORT>
-	clientOptions := options.Client().ApplyURI(fmt.Sprintf("%s:%s", os.Getenv("MONGODB_MONGODB8_URL"), os.Getenv("MONGODB_MONGODB8_PORT")))
+	clientOptions := options.Client().ApplyURI(fmt.Sprintf("%s:%s", os.Getenv("MONGODB_SAMPLE-TODO-DB_URL"), os.Getenv("MONGODB_SAMPLE-TODO-DB_PORT")))
 
 	// connect to MongoDB
 	client, err := mongo.Connect(context.TODO(), clientOptions)
